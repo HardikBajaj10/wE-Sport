@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-SPORT Commercial Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header ul li {
+            display: inline;
+        }
+
+        header ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #canvas-container {
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid #000;
+        }
+
+        #location-container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-SPORT Commercial Site</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome to the World of E-SPORTS</h2>
+        <p>Explore top gaming gear, merchandise, and more!</p>
+    </section>
+
+    <!-- Geolocation Section -->
+    <section id="location-container">
+        <h2>Your Location</h2>
+        <button onclick="getLocation()">Get My Location</button>
+        <p id="location">Location will appear here.</p>
+    </section>
+
+    <!-- Simplified Canvas Section -->
+    <section id="canvas-container">
+        <h2>Interactive Drawing</h2>
+        <canvas id="simpleCanvas" width="300" height="300"></canvas>
+        <br>
+        <button onclick="clearCanvas()">Clear</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 E-SPORT Commercial Site | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Geolocation Script
+        function getLocation() {
+            const locationElement = document.getElementById("location");
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        locationElement.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    },
+                    () => {
+                        locationElement.textContent = "Unable to retrieve location.";
+                    }
+                );
+            } else {
+                locationElement.textContent = "Geolocation is not supported by your browser.";
+            }
+        }
+
+        // Simplified Canvas Script
+        const canvas = document.getElementById("simpleCanvas");
+        const ctx = canvas.getContext("2d");
+        let isDrawing = false;
+
+        canvas.addEventListener("mousedown", () => (isDrawing = true));
+        canvas.addEventListener("mouseup", () => (isDrawing = false));
+        canvas.addEventListener("mousemove", (e) => {
+            if (!isDrawing) return;
+            ctx.fillStyle = "black";
+            ctx.fillRect(e.offsetX, e.offsetY, 2, 2); // Small dot at the cursor position
+        });
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>

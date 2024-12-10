@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>My page</title>
+    </head>
+    <body>
+        <h1><center>WELCOME TO MY PAGE</center></h1>
+        <table border=2 style="background-color: black;">
+            <tr align="center" style="background-color: aqua;">
+                <th width="100">Chicken</th>
+                <th width="100">Mutton</th>
+                <th width="100">Fish</th>
+                <th width="100">Prawn</th>
+            </tr>
+            <tr align="center" style="background-color: aliceblue;">
+                <td width="100">₹200</td>
+                <td width="100">₹300</td>
+                <td width="100">₹400</td>
+                <td width="100">₹500</td>
+            </tr>
+        </table><br><br>
+        <form action="" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" minlength="6" maxlength="10" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" minlength="6" maxlength="20" required><br><br>
+
+
+            <label for="E-Mail">E-Mail</label>
+            <input type="email" id="E-Mail" minlength="6" placeholder="abc@gmail.com" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone"  maxlength="10" required><br><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" max="99" value="1" required><br><br>
+
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday"  required><br><br>
+
+            <label for="title">Title:</label>
+            <input type="radio" id="title" required>
+            <label for ="Mr">Mr.</label>
+            <input type="radio" id="Mr" required>
+            <label for ="Mrs">Mrs</label>
+            <input type="radio" id="Mrs" required>
+            <label for ="Phd">Phd</label>
+            <input type="radio" id="Phd" required><br><br> 
+
+            <label for="payment">Payment:</label>
+            <select id="payment">
+                <option value="payment method">Payment method</option>
+                <option value="visa">VISA</option>
+                <option value="upi">UPI</option>
+                <option value="cash">CASH</option>
+            </select><br><br>
+
+            <label for="subscribed" >Subscribe</label>
+            <input type="checkbox" id="subscibed"><br><br>
+
+
+            <input type="submit">
+    </body>
+</html>

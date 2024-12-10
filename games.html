@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-SPORT | Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+body{
+    background-color: rgb(153, 130, 238);
+ }
+       
+.card {
+  position: relative;
+  width: 15em;
+  height: 20em;
+  box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+}
+.products {
+    display: flex; 
+    flex-direction: row; 
+    gap: 8em; 
+    flex-wrap: wrap;
+}
+.card::after {
+  content: "Add to Cart";
+  padding-top: 1.25em;
+  padding-left: 1.50em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: #00AC7C;
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.card .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
+}
+
+.card .price {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+
+.card:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card:active::after {
+  content: "Added !";
+  height: 3.125em;
+}
+
+.text {
+  max-width: 55px;
+}
+
+.image {
+  background: rgb(241, 241, 241);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  
+}
+.image img{
+  padding-right: 2em;
+  width: 300%;
+  height:600%;
+  object-fit: fill;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="color: black;"><center>TOURNAMENTS</center></h1>
+        <div class="products">
+        <div class="card">
+            <div class="image"><span class="text"><img src="Fifa.jpg"></span></div>
+              <span class="title">FIFA </span>
+              <span class="price">ENTRY FEE: $20</span>
+            </div>
+        <div class="card">
+                <div class="image"><span class="text"><img src="CSGO-Symbol.jpg"></span></div>
+                  <span class="title">CS-GO </span>
+                  <span class="price">ENTRY FEE: $10</span>
+                </div>
+        <div class="card">
+                    <div class="image"><span class="text"><img src="cod.jpg"></span></div>
+                      <span class="title">CALL OF DUTY</span>
+                      <span class="price">ENTRY FEE: $30</span>
+                    </div>
+        <div class="card">
+                    <div class="image"><span class="text"><img src="valorant.jpg"></span></div>
+                    <span class="title">VALORANT</span>
+                    <span class="price">ENTRY FEE: $40</span>
+            </div>
+         <div class="card">
+                <div class="image"><span class="text"><img src="fortnite.jpg"></span></div>
+                  <span class="title">FORTNITE</span>
+                  <span class="price">ENTRY FEE: $30</span>
+                </div>
+                <div class="card">
+                  <div class="image"><span class="text"><img src="forza horizon.jpg"></span></div>
+                    <span class="title">FORZA HORIZON</span>
+                    <span class="price">ENTRY FEE: $15</span>
+                  </div>
+                  <div class="card">
+                    <div class="image"><span class="text"><img src="bgmi.jpg"></span></div>
+                      <span class="title">BGMI</span>
+                      <span class="price">ENTRY FEE: $20</span>
+                    </div>
+        </div>
+        </div>
+    </main>
+</body>
+</html>

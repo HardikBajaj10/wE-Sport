@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wE-Sports>
+    <Games>
+        <Game>
+            <GameID>G101</GameID>
+            <GameName>Valorant</GameName>
+            <Genre>FPS</Genre>
+            <Price>29.99</Price>
+            <Platform>PC</Platform>
+            <ReleaseDate>2020-06-02</ReleaseDate>
+        </Game>
+        <Game>
+            <GameID>G102</GameID>
+            <GameName>FIFA 24</GameName>
+            <Genre>Sports</Genre>
+            <Price>49.99</Price>
+            <Platform>PlayStation</Platform>
+            <ReleaseDate>2023-09-29</ReleaseDate>
+        </Game>
+        <Game>
+            <GameID>G103</GameID>
+            <GameName>Fortnite</GameName>
+            <Genre>Battle Royale</Genre>
+            <Price>Free</Price>
+            <Platform>Multi-platform</Platform>
+            <ReleaseDate>2017-07-25</ReleaseDate>
+        </Game>
+    </Games>
+    <Users>
+        <User>
+            <UserID>U001</UserID>
+            <Username>Gamer123</Username>
+            <Email>gamer123@example.com</Email>
+            <Balance>100.00</Balance>
+        </User>
+        <User>
+            <UserID>U002</UserID>
+            <Username>ProPlayer</Username>
+            <Email>proplayer@example.com</Email>
+            <Balance>250.00</Balance>
+        </User>
+    </Users>
+    <Orders>
+        <Order>
+            <OrderID>O101</OrderID>
+            <UserID>U001</UserID>
+            <GameID>G101</GameID>
+            <PurchaseDate>2025-01-08</PurchaseDate>
+            <TotalPrice>29.99</TotalPrice>
+        </Order>
+        <Order>
+            <OrderID>O102</OrderID>
+            <UserID>U002</UserID>
+            <GameID>G102</GameID>
+            <PurchaseDate>2025-01-07</PurchaseDate>
+            <TotalPrice>49.99</TotalPrice>
+        </Order>
+    </Orders>
+</wE-Sports>

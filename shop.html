@@ -5,102 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-SPORT | Games</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-body{
-    background-color: rgb(153, 130, 238);
- }
-       
-.card {
-  position: relative;
-  width: 15em;
-  height: 20em;
-  box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: all 120ms;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 0.5em;
-  padding-bottom: 3.4em;
-}
-.products {
-    display: flex; 
-    flex-direction: row; 
-    gap: 8em; 
-    flex-wrap: wrap;
-}
-.card::after {
-  content: "Add to Cart";
-  padding-top: 1.25em;
-  padding-left: 1.50em;
-  position: absolute;
-  left: 0;
-  bottom: -60px;
-  background: #00AC7C;
-  color: #fff;
-  height: 2.5em;
-  width: 90%;
-  transition: all 80ms;
-  font-weight: 600;
-  text-transform: uppercase;
-  opacity: 0;
-}
+        body {
+            background: linear-gradient(135deg, #3E065F, #0D1B2A);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-.card .title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 1.875em;
-  font-weight: 400;
-  color: #000;
-}
+        header {
+            padding: 1rem 2rem;
+            background: #0D1B2A;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.card .price {
-  font-family: Impact, 'Arial Narrow Bold', sans-serif;
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 0.625em;
-  color: #000;
-}
+        header .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
 
-.card:hover::after {
-  bottom: 0;
-  opacity: 1;
-}
+        header .nav-links li {
+            margin: 0 1rem;
+        }
 
-.card:active {
-  transform: scale(0.98);
-}
+        header .nav-links a {
+            text-decoration: none;
+            color: #FFC300;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-.card:active::after {
-  content: "Added !";
-  height: 3.125em;
-}
+        header .nav-links a:hover {
+            color: #fff;
+        }
 
-.text {
-  max-width: 55px;
-}
+        h1 {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px #FFC300;
+        }
 
-.image {
-  background: rgb(241, 241, 241);
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  
-}
-.image img{
-  padding-right: 2em;
-  width: 300%;
-  height:600%;
-  object-fit: fill;
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            padding: 2rem;
+        }
 
-}
+        .card {
+            width: 250px;
+            padding: 1rem;
+            background: #1A1A1D;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 195, 0, 0.8);
+        }
+
+        .card::after {
+            content: "Add to Cart";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: #FFC300;
+            color: #1A1A1D;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover::after {
+            bottom: 0;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            color: #FFC300;
+        }
+
+        .price {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .products {
+                gap: 1rem;
+            }
+
+            .card {
+                width: 100%;
+                height: 700px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -116,49 +141,48 @@ body{
         </nav>
     </header>
     <main>
-        <h1 style="color: black;"><center>SHOP</center></h1>
+        <h1>Shop</h1>
         <div class="products">
-        <div class="card">
-            <div class="image"><span class="text"><img src="consoles.jpg"></span></div>
-              <span class="title">CONSOLES </span>
-              <span class="price">STARTING FROM: $100</span>
+            <div class="card">
+                <img src="consoles.jpg" alt="Consoles">
+                <span class="title">Consoles</span>
+                <span class="price">Starting from: $100</span>
             </div>
-        <div class="card">
-                <div class="image"><span class="text"><img src="cds.jpg"></span></div>
-                  <span class="title">CD'S </span>
-                  <span class="price">STARTING FROM: $20</span>
-                </div>
-        <div class="card">
-                    <div class="image"><span class="text"><img src="controllers.jpg"></span></div>
-                      <span class="title">CONTROLLERS</span>
-                      <span class="price">STARTING FROM: $40</span>
-                    </div>
-        <div class="card">
-                    <div class="image"><span class="text"><img src="pc.jpg"></span></div>
-                    <span class="title">PC</span>
-                    <span class="price">STARTING FROM: $150</span>
+            <div class="card">
+                <img src="CD2.jpg" alt="CDs">
+                <span class="title">CD's</span>
+                <span class="price">Starting from: $20</span>
             </div>
-         <div class="card">
-                <div class="image"><span class="text"><img src="combo.jfif"></span></div>
-                  <span class="title">COMBOS</span>
-                  <span class="price">STARTING FROM: $80</span>
-                </div>
-                <div class="card">
-                  <div class="image"><span class="text"><img src="accessories.jfif"></span></div>
-                    <span class="title">ACCESSORIES</span>
-                    <span class="price">STARTING FROM: $18</span>
-                  </div>
-                  <div class="card">
-                    <div class="image"><span class="text"><img src="keyboard.jfif"></span></div>
-                      <span class="title">KEYBOARD</span>
-                      <span class="price">STARTING FROM: $40</span>
-                    </div>
-                    <div class="card">
-                        <div class="image"><span class="text"><img src="mouse.jpg"></span></div>
-                          <span class="title">MOUSE</span>
-                          <span class="price">STARTING FROM: $25</span>
-                        </div>
-        </div>
+            <div class="card">
+                <img src="Controller.jpg" alt="Controllers">
+                <span class="title">Controllers</span>
+                <span class="price">Starting from: $40</span>
+            </div>
+            <div class="card">
+                <img src="pc.jpg" alt="PC">
+                <span class="title">PC</span>
+                <span class="price">Starting from: $150</span>
+            </div>
+            <div class="card">
+                <img src="combo.jpg" alt="Combos">
+                <span class="title">Combos</span>
+                <span class="price">Starting from: $80</span>
+            </div>
+            <div class="card">
+                <img src="accessories.jfif" alt="Accessories">
+                <span class="title">Accessories</span>
+                <span class="price">Starting from: $18</span>
+            </div>
+            <div class="card">
+                <img src="keyboard.jfif" alt="Keyboard">
+                <span class="title">Keyboard</span>
+                <span class="price">Starting from: $40</span>
+            </div>
+            <div class="card">
+                <img src="mouse.jpg" alt="Mouse">
+                <span class="title">Mouse</span>
+                <span class="price">Starting from: $25</span>
+            </div>
         </div>
     </main>
 </body>

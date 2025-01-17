@@ -31,13 +31,13 @@
         <User>
             <UserID>U001</UserID>
             <Username>Gamer123</Username>
-            <Email>gamer123@example.com</Email>
+            <Email>gamer123@gmail.com</Email>
             <Balance>100.00</Balance>
         </User>
         <User>
             <UserID>U002</UserID>
             <Username>ProPlayer</Username>
-            <Email>proplayer@example.com</Email>
+            <Email>proplayer@gmail.com</Email>
             <Balance>250.00</Balance>
         </User>
     </Users>

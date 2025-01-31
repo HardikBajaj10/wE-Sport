@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wE-SPORT | Tournaments</title>
+    <title>wE-SPORT | Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -36,7 +36,6 @@
 
         header .nav-links {
             display: flex;
-            justify-content: center;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -63,6 +62,18 @@
             font-size: 3rem;
             text-transform: uppercase;
             text-shadow: 3px 3px 15px #FFC300;
+        }
+
+        .search-box {
+            display: block;
+            width: 50%;
+            margin: 1rem auto;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            text-align: center;
         }
 
         .products {
@@ -157,66 +168,60 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <h1>Tournaments</h1>
-        <div class="products">
-            <div class="card">
-                <img src="Fifa.jpg" alt="FIFA">
-                <div class="card-content">
-                    <span class="title">FIFA</span><br>
-                    <span class="price">Entry Fee: $20</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="CSGO-Symbol.jpg" alt="CS-GO">
-                <div class="card-content">
-                    <span class="title">CS-GO</span><br>
-                    <span class="price">Entry Fee: $10</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="cod.jpg" alt="Call of Duty">
-                <div class="card-content">
-                    <span class="title">Call of Duty</span><br>
-                    <span class="price">Entry Fee: $30</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="valorant.jpg" alt="Valorant">
-                <div class="card-content">
-                    <span class="title">Valorant</span><br>
-                    <span class="price">Entry Fee: $40</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="fortnite.jpg" alt="Fortnite">
-                <div class="card-content">
-                    <span class="title">Fortnite</span><br>
-                    <span class="price">Entry Fee: $30</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="forza horizon.jpg" alt="Forza Horizon">
-                <div class="card-content">
-                    <span class="title">Forza Horizon</span><br>
-                    <span class="price">Entry Fee: $15</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="bgmi.jpg" alt="BGMI">
-                <div class="card-content">
-                    <span class="title">BGMI</span><br>
-                    <span class="price">Entry Fee: $20</span><br>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
+        <input type="text" id="search-box" class="search-box" placeholder="Search tournaments..." onkeyup="searchGames()">
+        <div class="products" id="product-container">
+            <!-- Games will be loaded dynamically here -->
         </div>
     </main>
+
+    <script>
+        let allGames = [];
+
+        // Load games from JSON
+        async function loadGames() {
+            try {
+                const response = await fetch('games.json');
+                allGames = await response.json();
+                displayGames(allGames);
+            } catch (error) {
+                console.error("Error loading games:", error);
+            }
+        }
+
+        // Display games
+        function displayGames(games) {
+            let productContainer = document.getElementById("product-container");
+            productContainer.innerHTML = "";
+
+            games.forEach(game => {
+                let gameDiv = document.createElement("div");
+                gameDiv.classList.add("card");
+                gameDiv.innerHTML = `
+                    <img src="${game.image}" alt="${game.name}">
+                    <div class="card-content">
+                        <span class="title">${game.name}</span><br>
+                        <span class="price">Entry Fee: ${game.entry_fee}</span><br>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                `;
+                productContainer.appendChild(gameDiv);
+            });
+        }
+
+        // Search games
+        function searchGames() {
+            let searchQuery = document.getElementById("search-box").value.toLowerCase();
+            let filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().includes(searchQuery)
+            );
+            displayGames(filteredGames);
+        }
+
+        // Load games on page load
+        document.addEventListener("DOMContentLoaded", loadGames);
+    </script>
 </body>
 </html>

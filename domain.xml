@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="domain.xsl" type="text/xsl"?>
 <wE-Sports>
     <Games>
         <Game>
@@ -31,13 +30,13 @@
         <User>
             <UserID>U001</UserID>
             <Username>Gamer123</Username>
-            <Email>gamer123@gmail.com</Email>
+            <Email>gamer123@example.com</Email>
             <Balance>100.00</Balance>
         </User>
         <User>
             <UserID>U002</UserID>
             <Username>ProPlayer</Username>
-            <Email>proplayer@gmail.com</Email>
+            <Email>proplayer@example.com</Email>
             <Balance>250.00</Balance>
         </User>
     </Users>

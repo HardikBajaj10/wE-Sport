@@ -9,4 +9,5 @@
     { "image": "pubg.jpg", "name": "PUBG", "entry_fee": "$25" },
     { "image": "apex legends.jpg", "name": "Apex Legends", "entry_fee": "$35" },
     { "image": "nba.jpg", "name": "NBA 2K", "entry_fee": "$18" }
+    
 ]

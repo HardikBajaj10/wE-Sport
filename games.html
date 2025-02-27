@@ -173,14 +173,12 @@
         <h1>Tournaments</h1>
         <input type="text" id="search-box" class="search-box" placeholder="Search tournaments..." onkeyup="searchGames()">
         <div class="products" id="product-container">
-            <!-- Games will be loaded dynamically here -->
         </div>
     </main>
 
     <script>
         let allGames = [];
 
-        // Load games from JSON
         async function loadGames() {
             try {
                 const response = await fetch('games.json');
@@ -190,8 +188,6 @@
                 console.error("Error loading games:", error);
             }
         }
-
-        // Display games
         function displayGames(games) {
             let productContainer = document.getElementById("product-container");
             productContainer.innerHTML = "";
@@ -210,8 +206,6 @@
                 productContainer.appendChild(gameDiv);
             });
         }
-
-        // Search games
         function searchGames() {
             let searchQuery = document.getElementById("search-box").value.toLowerCase();
             let filteredGames = allGames.filter(game => 
@@ -219,8 +213,6 @@
             );
             displayGames(filteredGames);
         }
-
-        // Load games on page load
         document.addEventListener("DOMContentLoaded", loadGames);
     </script>
 </body>

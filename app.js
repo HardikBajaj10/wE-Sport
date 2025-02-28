@@ -7,37 +7,55 @@ app.controller('myController', function($scope, $http) {
         $scope.tournaments = response.data.tournaments;
     });
 
-    // Click function
+    // Sorting function
+    $scope.sortBy = 'price';
+    $scope.setSort = function(column) {
+        $scope.sortBy = column;
+    };
+
+    // Buy Now alert
     $scope.showMessage = function(productName) {
         alert("You selected: " + productName);
     };
 
-    // Focus & Blur Effects
+    // Focus & Blur Effects (For Input Field)
     $scope.onFocus = function() {
-        $scope.focusMessage = "You are entering your name...";
+        $scope.focusMessage = "You are entering your email...";
     };
 
     $scope.onBlur = function() {
         $scope.focusMessage = "You left the input field.";
     };
-// Define AngularJS app
-var app = angular.module('myApp', []);
 
-// Define the controller
-app.controller('myController', function($scope) {
     // Subscribe function
     $scope.subscribe = function() {
         if ($scope.username && $scope.username.trim() !== "") {
-            alert("Thank you, " + $scope.username + "! You have subscribed successfully.");
-            $scope.username = ""; // Clears input field after subscribing
+            $http.post("http://localhost:3000/subscribe", { email: $scope.username })
+                .then(function(response) {
+                    alert(response.data.message);
+                    $scope.username = ""; // Clears input after subscribing
+                })
+                .catch(function(error) {
+                    alert("Error subscribing. Try again.");
+                });
         } else {
-            alert("Please enter your name before subscribing.");
+            alert("Please enter your email before subscribing.");
         }
     };
+
+    // Watching Changes in Username Input
+    $scope.$watch("username", function(newValue, oldValue) {
+        console.log("Username changed from", oldValue, "to", newValue);
+    });
+
+    // Broadcasting Event When Data is Loaded
+    $scope.$broadcast("dataLoaded", { products: $scope.products, tournaments: $scope.tournaments });
+
+    // Listening for Event
+    $scope.$on("dataLoaded", function(event, data) {
+        console.log("Data Loaded:", data);
+    });
+
+    // Emitting an Event Example
+    $scope.$emit("appStarted", "App has started successfully!");
 });
-
-
-
-
-});
-

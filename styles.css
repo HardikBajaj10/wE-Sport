@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +12,11 @@ body {
     color: #E5E5E5;
 }
 
-/* Header Styling */
+/* ✅ Restored Header Styling */
 header {
     background: rgba(0, 0, 0, 0.6);
     color: #E5E5E5;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     position: sticky;
@@ -23,18 +24,20 @@ header {
     z-index: 1000;
 }
 
-header h3 {
-    margin: 0;
-    font-weight: 700;
-    text-shadow: 2px 2px 10px #FFC300;
+/* ✅ Restored Navigation Menu */
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 0.5rem 0;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li a {
@@ -43,14 +46,18 @@ nav ul li a {
     font-weight: bold;
     font-size: 1rem;
     transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
     color: #E5E5E5;
+    background: #FFC300;
     transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
-/* Hero Section with Parallax Effect */
+/* ✅ Restored Parallax Effect */
 #hero {
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/217/222/small/gaming-background-blue-and-purple-with-element-vector.jpg'); 
     min-height: 100vh;
@@ -67,52 +74,61 @@ nav ul li a:hover {
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Products Section */
-.products {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(to bottom, #1A1A1D, #0D1B2A);
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-}
-
+/* ✅ Centering "Featured Products" Heading */
 .products h2 {
+    text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #FFC300;
     text-shadow: 1px 1px 10px rgba(255, 195, 0, 0.8);
 }
 
-/* Product Boxes */
+/* ✅ Centering Product Boxes */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ✅ Ensured Product Boxes Have the Same Size */
 .product-box {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 300px;
-    min-height: 420px; /* ✅ Ensures all boxes are equal height */
-    margin: 1.5rem;
+    min-height: 450px;
     padding: 1.5rem;
     background-color: #1A1A1D;
     border: 1px solid #FFC300;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(255, 195, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    vertical-align: top; /* ✅ Keeps alignment consistent */
+    text-align: center;
 }
 
 .product-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 6px 25px rgba(255, 195, 0, 0.9);
 }
 
+/* ✅ Ensured All Product Images Are the Same Size */
 .product-box img {
-    max-width: 100%;
+    width: 100%;
+    height: 200px; /* ✅ Fixed height for consistency */
+    object-fit: cover; /* ✅ Prevents distortion */
     border-radius: 8px;
 }
 
+/* ✅ Ensured Text Inside Boxes is Properly Sized */
 .product-box h3 {
-    margin: 1rem 0;
+    font-size: 1.2rem;
+    margin: 10px 0;
     color: #FFC300;
 }
 
 .product-box p {
+    font-size: 1rem;
     color: #E5E5E5;
     font-weight: bold;
 }
@@ -127,8 +143,9 @@ nav ul li a:hover {
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 3px 8px rgba(255, 195, 0, 0.6);
+    margin-top: auto; /* ✅ Ensures button stays at the bottom */
 }
 
 .buy-now-btn:hover {
@@ -138,7 +155,34 @@ nav ul li a:hover {
     box-shadow: 0 5px 15px rgba(255, 195, 0, 0.9);
 }
 
-/* ✅ Newsletter Section */
+/* ✅ Center & Style Sorting Buttons */
+.sort-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sort-btn {
+    background: #FFC300;
+    color: #0D1B2A;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(255, 195, 0, 0.6);
+    margin: 5px;
+}
+
+.sort-btn:hover {
+    background: #E5E5E5;
+    color: #1A1A1D;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.9);
+}
+
+/* ✅ Newsletter */
 .newsletter {
     text-align: center;
     padding: 3rem 1rem;
@@ -146,14 +190,6 @@ nav ul li a:hover {
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.newsletter h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #FFC300;
-    text-shadow: 1px 1px 10px rgba(255, 195, 0, 0.8);
-}
-
-/* ✅ Newsletter Input Field */
 .newsletter-input {
     width: 50%;
     padding: 12px;
@@ -162,16 +198,14 @@ nav ul li a:hover {
     border-radius: 8px;
     background: #0D1B2A;
     color: #E5E5E5;
-    transition: border 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: border 0.3s ease, background 0.3s ease;
 }
 
 .newsletter-input:focus {
     border-color: #E5E5E5;
     background: #1A1A1D;
-    box-shadow: 0 3px 8px rgba(255, 195, 0, 0.6);
 }
 
-/* ✅ Newsletter Subscribe Button */
 .subscribe-btn {
     background: #FFC300;
     color: #0D1B2A;
@@ -181,8 +215,7 @@ nav ul li a:hover {
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 3px 8px rgba(255, 195, 0, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
     margin-top: 1rem;
 }
 
@@ -190,10 +223,9 @@ nav ul li a:hover {
     background: #E5E5E5;
     color: #1A1A1D;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.9);
 }
 
-/* Footer */
+/* ✅ Footer */
 footer {
     text-align: center;
     background: linear-gradient(to left, #1A1A1D, #0D1B2A);

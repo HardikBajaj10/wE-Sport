@@ -3,19 +3,19 @@
         {
             "id": 1,
             "name": "Gaming Mouse",
-            "price": "$30",
+            "price": 30,
             "image": "mouse.jpg"
         },
         {
             "id": 2,
             "name": "Mechanical Keyboard",
-            "price": "$80",
+            "price": 80,
             "image": "mechkeyboard.jpg"
         },
         {
             "id": 3,
             "name": "Gaming Headset",
-            "price": "$50",
+            "price": 50,
             "image": "gaming headset.jpg"
         }
     ],
@@ -28,7 +28,7 @@
         {
             "id": 2,
             "name": "Forza Horizon Cup",
-            "image": "forza_horizon.jpg"
+            "image": "forza-horizon.jpg"
         },
         {
             "id": 3,

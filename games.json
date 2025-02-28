@@ -1,13 +1,13 @@
 [
-    { "image": "Fifa.jpg", "name": "FIFA", "entry_fee": "$20" },
-    { "image": "CSGO-Symbol.jpg", "name": "CS-GO", "entry_fee": "$10" },
-    { "image": "cod.jpg", "name": "Call of Duty", "entry_fee": "$30" },
-    { "image": "valorant.jpg", "name": "Valorant", "entry_fee": "$40" },
-    { "image": "fortnite.jpg", "name": "Fortnite", "entry_fee": "$30" },
-    { "image": "forza horizon.jpg", "name": "Forza Horizon", "entry_fee": "$15" },
-    { "image": "bgmi.jpg", "name": "BGMI", "entry_fee": "$20" },
-    { "image": "pubg.jpg", "name": "PUBG", "entry_fee": "$25" },
-    { "image": "apex legends.jpg", "name": "Apex Legends", "entry_fee": "$35" },
-    { "image": "nba.jpg", "name": "NBA 2K", "entry_fee": "$18" }
+    { "image": "images/Fifa.jpg", "name": "FIFA", "entry_fee": "$20" },
+    { "image": "images/CSGO-Symbol.jpg", "name": "CS-GO", "entry_fee": "$10" },
+    { "image": "images/cod.jpg", "name": "Call of Duty", "entry_fee": "$30" },
+    { "image": "images/valorant.jpg", "name": "Valorant", "entry_fee": "$40" },
+    { "image": "images/fortnite.jpg", "name": "Fortnite", "entry_fee": "$30" },
+    { "image": "images/forza-horizon.jpg", "name": "Forza Horizon", "entry_fee": "$15" },
+    { "image": "images/bgmi.jpg", "name": "BGMI", "entry_fee": "$20" },
+    { "image": "images/pubg.jpg", "name": "PUBG", "entry_fee": "$25" },
+    { "image": "images/apex legends.jpg", "name": "Apex Legends", "entry_fee": "$35" },
+    { "image": "images/nba.jpg", "name": "NBA 2K", "entry_fee": "$18" }
     
 ]
